@@ -13,6 +13,10 @@ const __dirname = path.dirname(__filename);
 const PAGES_DIR = path.resolve(__dirname, '..'); // app/renderer/main
 //Importa o repositório de produtos para permitir a inserção de dados de produtos a partir do renderer via IPC
 import ProductRepository from '../../../database/repositories/ProductRepository.js';
+import UsuarioRepository from '../../../database/repositories/UsuarioRepository.js';
+import ClienteRepository from '../../../database/repositories/ClienteRepository.js';
+import FornecedorRepository from '../../../database/repositories/FornecedorRepository.js';
+
 // Exporta a classe como padrão do módulo, tornando-a disponível para importação em outros arquivos
 export default class MainWindowFactory {
     // Método estático — pode ser chamado direto na classe sem precisar instanciá-la: MainWindowFactory.createWindow()
@@ -48,6 +52,18 @@ export default class MainWindowFactory {
         // disparado pelo renderer para salvar dados de produto
         ipcMain.handle('product:save', async (_event, productData) => {
             return await ProductRepository.insert(productData);
+        });
+        // disparado pelo renderer para salvar dados de Usuario
+        ipcMain.handle('usuario:save', async (_event, productData) => {
+            return await UsuarioRepository.insert(productData);
+        });
+        // disparado pelo renderer para salvar dados de cliente
+        ipcMain.handle('cliente:save', async (_event, data) => {
+            return await ClienteRepository.insert(data);
+        });
+        // disparado pelo renderer para salvar dados de Fornecedor
+        ipcMain.handle('fornecedor:save', async (_event, data) => {
+            return await FornecedorRepository.insert(data);
         });
         // Carrega o arquivo index.html na janela assim que ela é criada, exibindo a tela inicial
         mainWindow.loadFile(path.join(PAGES_DIR, 'index.html'));
