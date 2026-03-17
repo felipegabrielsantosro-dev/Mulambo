@@ -18,21 +18,21 @@
         "drizzle-orm": "^0.45.1",
         "pg": "^8.20.0"
     },
-
-"build": {
-    "appId": "Mulambo-app",
-    "productName": "Mulambo",
-    "directories": {
-        "output": "C:\\Mulambo"
-    },
-    "files": [
-        "app/**/*",
-        "node_modules/**/*",
-        "package.json"
-    ],
-    "asar": false,
-    "win": {
-        "target": "portable"
+    "build": {
+        "appId": "Mulambo-app",
+        "productName": "Mulambo",
+        "directories": {
+            "output": "C:\\Mulambo"
+        },
+        "files": [
+            "app/**/*",
+            "node_modules/**/*",
+            ".env",
+            "package.json"
+        ],
+        "asar": false,
+        "win": {
+            "target": "portable"
+        }
     }
-}
 }

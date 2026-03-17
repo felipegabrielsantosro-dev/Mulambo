@@ -9,9 +9,7 @@ saveButton.addEventListener('click', async () => {
     try {
         const result = await window.electronAPI.saveUsuario(data);
         console.log('usuario salvo com sucesso:', result);
-        alert('usuario salvo com sucesso!');
     } catch (error) {
         console.error('Erro ao salvar usuario:', error);
-        alert('Erro ao salvar usuario!');
     }
 });
