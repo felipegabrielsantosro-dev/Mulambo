@@ -4,95 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Produto</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background: linear-gradient(135deg, #6a11cb, #2575fc);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #fff;
-        }
-
-        .form-container {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 40px 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            width: 100%;
-            max-width: 450px;
-        }
-
-        .form-container h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
-        }
-
-        .form-control {
-            background-color: rgba(255, 255, 255, 0.2);
-            border: none;
-            color: #fff;
-        }
-
-        .form-control:focus {
-            background-color: rgba(255, 255, 255, 0.3);
-            color: #fff;
-            box-shadow: none;
-            border: none;
-        }
-
-        .btn-custom {
-            width: 100%;
-            padding: 12px 0;
-            font-weight: bold;
-            font-size: 1rem;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-        }
-
-        .btn-custom:hover {
-            filter: brightness(1.1);
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .btn-group button {
-            flex: 1;
-        }
-    </style>
+    <title>Produto</title>
 </head>
 
 <body>
-    <div class="form-container">
-        <h2>Cadastro de Produto</h2>
+    <button onclick="window.electronAPI.goHome()">Home</button>
+    <button onclick="window.electronAPI.openPage('listaproduto.html')">Lista de produtos</button>
+    <br>
+    <br>
+    <input type="text" placeholder="Nome do produto" id="name">
+    <br>
+    <br>
+    <input type="text" placeholder="Valor do produto" id="price">
+    <br>
+    <br>
+    <br>
+    <button id="save-button">Salvar Produto</button>
 
-        <div class="btn-group mb-4">
-            <button class="btn btn-outline-light" onclick="window.electronAPI.goHome()">Home</button>
-            <button class="btn btn-outline-light" onclick="window.electronAPI.openPage('listaproduto.html')">Lista de Produtos</button>
-        </div>
-
-        <div class="mb-3">
-            <input type="text" class="form-control" id="name" placeholder="Nome do produto">
-        </div>
-
-        <div class="mb-3">
-            <input type="text" class="form-control" id="price" placeholder="Valor do produto">
-        </div>
-
-        <button id="save-button" class="btn btn-primary btn-custom mt-3">Salvar Produto</button>
-    </div>
-
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="produto.js"></script>
 </body>
 

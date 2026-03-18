@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Empresa</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+        }
+
+        .form-control {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: #fff;
+        }
+
+        .form-control:focus {
+            background-color: rgba(255, 255, 255, 0.3);
+            color: #fff;
+            box-shadow: none;
+        }
+
+        .btn-custom {
+            width: 100%;
+            padding: 12px 0;
+            font-weight: bold;
+            font-size: 1rem;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .btn-custom:hover {
+            filter: brightness(1.1);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .btn-group button {
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="form-container">
+
+    <h2>Cadastro de Empresa</h2>
+
+    <div class="btn-group">
+        <button class="btn btn-outline-light"
+            onclick="window.electronAPI.goHome()">
+            Home
+        </button>
+
+        <button class="btn btn-outline-light"
+            onclick="window.electronAPI.openPage('listaempresa.html')">
+            Lista de Empresas
+        </button>
+    </div>
+
+    <div class="mb-3">
+        <input type="text" class="form-control" id="razaoSocial" placeholder="Razão Social">
+    </div>
+
+    <div class="mb-3">
+        <input type="text" class="form-control" id="nomeFantasia" placeholder="Nome Fantasia">
+    </div>
+
+    <div class="mb-3">
+        <input type="text" class="form-control" id="cnpj" placeholder="CNPJ">
+    </div>
+
+    <div class="mb-3">
+        <input type="text" class="form-control" id="telefone" placeholder="Telefone">
+    </div>
+
+    <button id="save-button" class="btn btn-primary btn-custom mt-3">
+        Salvar Empresa
+    </button>
+
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="empresa.js"></script>
+
+</body>
+</html>

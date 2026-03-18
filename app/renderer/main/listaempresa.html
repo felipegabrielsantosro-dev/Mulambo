@@ -12,7 +12,7 @@
     <link href="https://cdn.datatables.net/2.3.7/css/dataTables.bootstrap5.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/responsive/3.0.8/css/responsive.bootstrap5.min.css" rel="stylesheet">
 
-    <title>Lista de Fornecedores</title>
+    <title>Lista de Empresas</title>
 </head>
 
 <body class="bg-light">
@@ -27,7 +27,7 @@
                     Home
                 </span>
             </li>
-            <li class="breadcrumb-item active">Lista de fornecedores</li>
+            <li class="breadcrumb-item active">Lista de empresas</li>
         </ol>
     </nav>
 
@@ -36,11 +36,11 @@
 
         <div class="card-header d-flex justify-content-between align-items-center">
 
-            <h5 class="mb-0">Fornecedores cadastrados</h5>
+            <h5 class="mb-0">Empresas cadastradas</h5>
 
             <button class="btn btn-primary"
-                onclick="window.electronAPI.openPage('fornecedor.html')">
-                + Adicionar fornecedor
+                onclick="window.electronAPI.openPage('empresa.html')">
+                + Adicionar empresa
             </button>
 
         </div>
@@ -54,8 +54,8 @@
                     <thead class="table-dark">
                         <tr>
                             <th style="width:100px;">ID</th>
-                            <th>Nome</th>
-                            <th>Email</th>
+                            <th>Razão Social</th>
+                            <th>Nome Fantasia</th>
                             <th>CNPJ</th>
                             <th style="width:150px;">Telefone</th>
                         </tr>
@@ -64,26 +64,26 @@
                     <tbody>
                         <tr>
                             <td>1</td>
-                            <td>Fornecedor Tech</td>
-                            <td>contato@tech.com</td>
+                            <td>Tech Solutions LTDA</td>
+                            <td>Tech Solutions</td>
                             <td>12.345.678/0001-90</td>
-                            <td>(61) 99999-9999</td>
+                            <td>(61) 99999-0000</td>
                         </tr>
 
                         <tr>
                             <td>2</td>
-                            <td>Distribuidora Alpha</td>
-                            <td>alpha@email.com</td>
+                            <td>Alpha Comércio S/A</td>
+                            <td>Alpha</td>
                             <td>98.765.432/0001-10</td>
-                            <td>(61) 98888-8888</td>
+                            <td>(61) 98888-0000</td>
                         </tr>
 
                         <tr>
                             <td>3</td>
-                            <td>Comercial Brasil</td>
-                            <td>vendas@brasil.com</td>
+                            <td>Brasil Distribuidora LTDA</td>
+                            <td>Distribuidora Brasil</td>
                             <td>11.222.333/0001-44</td>
-                            <td>(61) 97777-7777</td>
+                            <td>(61) 97777-0000</td>
                         </tr>
                     </tbody>
 
@@ -111,7 +111,7 @@
 <script src="https://cdn.datatables.net/responsive/3.0.8/js/dataTables.responsive.min.js"></script>
 <script src="https://cdn.datatables.net/responsive/3.0.8/js/responsive.bootstrap5.js"></script>
 
-<script type="module" src="listafornecedor.js"></script>
+<script type="module" src="listaempresa.js"></script>
 
 </body>
 </html>

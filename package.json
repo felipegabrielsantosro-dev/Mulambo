@@ -6,33 +6,72 @@
     "private": true,
     "scripts": {
         "start": "electron .",
-        "build": "electron-builder"
-    },
-    "devDependencies": {
-        "drizzle-kit": "^0.31.9",
-        "electron": "^40.7.0",
-        "electron-builder": "^26.8.1"
-    },
-    "dependencies": {
-        "dotenv": "^17.3.1",
-        "drizzle-orm": "^0.45.1",
-        "pg": "^8.20.0"
+        "build:win": "electron-builder --win",
+        "build:linux": "electron-builder --linux",
+        "build:all": "electron-builder --win --linux"
     },
     "build": {
-        "appId": "Mulambo-app",
-        "productName": "Mulambo",
+        "appId": "com.deskivo.app",
+        "productName": "Deskivo",
+        "copyright": "Copyright © 2025 Deskivo",
         "directories": {
-            "output": "C:\\Mulambo"
+            "output": "C:/deskivo"
         },
         "files": [
             "app/**/*",
             "node_modules/**/*",
-            ".env",
-            "package.json"
+            "package.json",
+            ".env"
         ],
-        "asar": false,
         "win": {
-            "target": "portable"
-        }
+            "target": [
+                {
+                    "target": "nsis",
+                    "arch": [
+                        "x64"
+                    ]
+                }
+            ],
+            "icon": "app/assets/icon.ico"
+        },
+        "nsis": {
+            "oneClick": false,
+            "allowToChangeInstallationDirectory": true,
+            "createDesktopShortcut": true,
+            "createStartMenuShortcut": true,
+            "shortcutName": "Deskivo"
+        },
+        "linux": {
+            "target": [
+                {
+                    "target": "AppImage",
+                    "arch": [
+                        "x64"
+                    ]
+                },
+                {
+                    "target": "deb",
+                    "arch": [
+                        "x64"
+                    ]
+                }
+            ],
+            "icon": "app/assets/icon.png",
+            "category": "Office"
+        },
+        "electronVersion": "40.7.0"
+    },
+    "devDependencies": {
+        "drizzle-kit": "^0.31.9",
+        "electron": "^40.7.0",
+        "electron-builder": "^25.1.8"
+    },
+    "dependencies": {
+        "datatables.net-dt": "^2.3.7",
+        "dotenv": "^17.3.1",
+        "drizzle-orm": "^0.45.1",
+        "knex": "^3.1.0",
+        "pg": "^8.20.0",
+        "postgres": "^3.4.8"
     }
 }
