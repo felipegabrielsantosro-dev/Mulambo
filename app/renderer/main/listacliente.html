@@ -17,77 +17,52 @@
 
 <body class="bg-light">
 
-<div class="container mt-4">
+    <div class="container mt-4">
 
-    <!-- Breadcrumb -->
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <span onclick="window.electronAPI.openPage('index.html')" style="cursor:pointer;">
-                    Home
-                </span>
-            </li>
-            <li class="breadcrumb-item active">Lista de clientes</li>
-        </ol>
-    </nav>
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <span onclick="window.electronAPI.openPage('index.html')" style="cursor:pointer;">
+                        Home
+                    </span>
+                </li>
+                <li class="breadcrumb-item active">Lista de clientes</li>
+            </ol>
+        </nav>
 
-    <!-- Card -->
-    <div class="card shadow-sm">
+        <!-- Card -->
+        <div class="card shadow-sm">
 
-        <div class="card-header d-flex justify-content-between align-items-center">
+            <div class="card-header d-flex justify-content-between align-items-center">
 
-            <h5 class="mb-0">Clientes cadastrados</h5>
+                <h5 class="mb-0">Clientes cadastrados</h5>
 
-            <button class="btn btn-primary"
-                onclick="window.electronAPI.openPage('cliente.html')">
-                + Adicionar cliente
-            </button>
+                <button class="btn btn-primary" onclick="window.electronAPI.openPage('cliente.html')">
+                    + Adicionar cliente
+                </button>
 
-        </div>
+            </div>
 
-        <div class="card-body">
+            <div class="card-body">
 
-            <div class="table-responsive">
+                <div class="table-responsive">
 
-                <table id="tabela" class="table table-striped table-hover align-middle">
+                    <table id="tabela" class="table table-striped table-hover align-middle">
 
-                    <thead class="table-dark">
-                        <tr>
-                            <th style="width:100px;">ID</th>
-                            <th>Nome</th>
-                            <th>Email</th>
-                            <th>CPF</th>
-                            <th style="width:150px;">Telefone</th>
-                        </tr>
-                    </thead>
+                        <thead class="table-dark">
+                            <tr>
+                                <th style="width:100px;">Código</th>
+                                <th>Nome</th>
+                                <th>Data nascimento</th>
+                            </tr>
+                        </thead>
 
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>João Silva</td>
-                            <td>joao@email.com</td>
-                            <td>123.456.789-00</td>
-                            <td>(61) 99999-1111</td>
-                        </tr>
+                        <tbody></tbody>
 
-                        <tr>
-                            <td>2</td>
-                            <td>Maria Souza</td>
-                            <td>maria@email.com</td>
-                            <td>987.654.321-00</td>
-                            <td>(61) 98888-2222</td>
-                        </tr>
+                    </table>
 
-                        <tr>
-                            <td>3</td>
-                            <td>Carlos Pereira</td>
-                            <td>carlos@email.com</td>
-                            <td>111.222.333-44</td>
-                            <td>(61) 97777-3333</td>
-                        </tr>
-                    </tbody>
-
-                </table>
+                </div>
 
             </div>
 
@@ -95,23 +70,22 @@
 
     </div>
 
-</div>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Bootstrap -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- DataTables -->
+    <script src="https://cdn.datatables.net/2.3.7/js/dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/2.3.7/js/dataTables.bootstrap5.min.js"></script>
 
-<!-- DataTables -->
-<script src="https://cdn.datatables.net/2.3.7/js/dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/2.3.7/js/dataTables.bootstrap5.min.js"></script>
+    <!-- Responsive -->
+    <script src="https://cdn.datatables.net/responsive/3.0.8/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/3.0.8/js/responsive.bootstrap5.js"></script>
 
-<!-- Responsive -->
-<script src="https://cdn.datatables.net/responsive/3.0.8/js/dataTables.responsive.min.js"></script>
-<script src="https://cdn.datatables.net/responsive/3.0.8/js/responsive.bootstrap5.js"></script>
-
-<script type="module" src="listacliente.js"></script>
+    <script type="module" src="listacliente.js"></script>
 
 </body>
+
 </html>

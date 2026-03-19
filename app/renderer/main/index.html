@@ -8,8 +8,28 @@
     <title>Deskivo - pagina inicial</title>
 </head>
 
-<body>
-    <button id="product-button">Produto</button>
+<body class="p-4">
+
+    <div class="d-flex gap-2 flex-wrap">
+        <button id="product-button" class="btn btn-primary"
+            onclick="window.electronAPI.openPage('listaproduto.html')">Produto</button>
+
+        <button id="client-button" class="btn btn-success"
+            onclick="window.electronAPI.openPage('listacliente.html')">Cliente</button>
+
+        <button id="user-button" class="btn btn-secondary"
+            onclick="window.electronAPI.openPage('listausuario.html')">Usuário</button>
+
+        <button id="company-button" class="btn btn-warning"
+            onclick="window.electronAPI.openPage('listaempresa.html')">Empresa</button>
+
+        <button id="supplier-button" class="btn btn-danger"
+            onclick="window.electronAPI.openPage('listafornecedor.html')">Fornecedor</button>
+
+        <button id="sale-button" class="btn btn-dark"
+            onclick="window.electronAPI.openPage('listavenda.html')">Venda</button>
+    </div>
+
     <script type="module" src="home.js"></script>
 </body>
 

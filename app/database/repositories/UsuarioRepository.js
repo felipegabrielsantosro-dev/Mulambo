@@ -14,6 +14,8 @@ export default class UsuarioRepository {
             return result[0];
         } finally {
             client.release();
+
+            
         }
     }
 }

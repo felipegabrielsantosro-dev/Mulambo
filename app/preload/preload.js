@@ -5,4 +5,6 @@ contextBridge.exposeInMainWorld('electronAPI', {
     goHome: () => ipcRenderer.invoke('window:open-page', 'index.html'),
     saveProduct: (data) => ipcRenderer.invoke('product:save', data),
     searchProducts: (data) => ipcRenderer.invoke('product:search', data),
+    searchCliente: (data) => ipcRenderer.invoke('cliente:search', data),
+    
 });
