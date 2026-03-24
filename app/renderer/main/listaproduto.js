@@ -1,4 +1,4 @@
-const table = new DataTable('#tabela-produto', {
+const table = new DataTable('#tabela', {
     responsive: true,
     processing: true,
     serverSide: true,

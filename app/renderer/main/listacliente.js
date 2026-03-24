@@ -1,28 +1,3 @@
-/*const voltarButton = document.getElementById('voltar-button');
-const cadastroButton = document.getElementById('cadastro-button');
-
-voltarButton.addEventListener('click', async () => {
-    try {
-        if (!window.electronAPI || typeof window.electronAPI.openPage !== 'function') {
-            throw new Error('API do Electron não foi injetada pelo preload');
-        }
-        await window.electronAPI.goHome();
-    } catch (error) {
-        console.error('Erro ao abrir a janela principal:', error);
-    }
-});
-
-cadastroButton.addEventListener('click', async () => {
-    try {
-        if (!window.electronAPI || typeof window.electronAPI.openPage !== 'function') {
-            throw new Error('API do Electron não foi injetada pelo preload');
-        }
-        await window.electronAPI.openPage('cliente.html');
-    } catch (error) {
-        console.error('Erro ao abrir a janela de cadastro de cliente:', error);
-    }
-});*/
-
 const table = new DataTable('#tabela', {
     responsive: true,
     processing: true,
@@ -56,6 +31,7 @@ const table = new DataTable('#tabela', {
     columns: [
         { data: 'id', title: 'Código' },
         { data: 'name', title: 'Nome' },
-        { data: 'datanascimento', title: 'Data de nascimento' }
+        { data: 'cpf', title: 'cpf' },
+        { data: 'telefone', title: 'Contato' }
     ]
 });

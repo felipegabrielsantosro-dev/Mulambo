@@ -4,114 +4,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
-
-    <!-- DataTables -->
     <link href="https://cdn.datatables.net/2.3.7/css/dataTables.bootstrap5.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/responsive/3.0.8/css/responsive.bootstrap5.min.css" rel="stylesheet">
-
-    <title>Lista de Empresas</title>
+    <title>Lista de Empresa</title>
 </head>
 
-<body class="bg-light">
+<body>
 
-<div class="container mt-4">
-
-    <!-- Breadcrumb -->
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <span onclick="window.electronAPI.openPage('index.html')" style="cursor:pointer;">
-                    Home
-                </span>
-            </li>
-            <li class="breadcrumb-item active">Lista de empresas</li>
-        </ol>
-    </nav>
-
-    <!-- Card -->
-    <div class="card shadow-sm">
-
-        <div class="card-header d-flex justify-content-between align-items-center">
-
-            <h5 class="mb-0">Empresas cadastradas</h5>
-
-            <button class="btn btn-primary"
-                onclick="window.electronAPI.openPage('empresa.html')">
-                + Adicionar empresa
-            </button>
-
-        </div>
-
-        <div class="card-body">
-
-            <div class="table-responsive">
-
-                <table id="tabela" class="table table-striped table-hover align-middle">
-
-                    <thead class="table-dark">
-                        <tr>
-                            <th style="width:100px;">ID</th>
-                            <th>Razão Social</th>
-                            <th>Nome Fantasia</th>
-                            <th>CNPJ</th>
-                            <th style="width:150px;">Telefone</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Tech Solutions LTDA</td>
-                            <td>Tech Solutions</td>
-                            <td>12.345.678/0001-90</td>
-                            <td>(61) 99999-0000</td>
-                        </tr>
-
-                        <tr>
-                            <td>2</td>
-                            <td>Alpha Comércio S/A</td>
-                            <td>Alpha</td>
-                            <td>98.765.432/0001-10</td>
-                            <td>(61) 98888-0000</td>
-                        </tr>
-
-                        <tr>
-                            <td>3</td>
-                            <td>Brasil Distribuidora LTDA</td>
-                            <td>Distribuidora Brasil</td>
-                            <td>11.222.333/0001-44</td>
-                            <td>(61) 97777-0000</td>
-                        </tr>
-                    </tbody>
-
-                </table>
-
+    <div class="container">
+        <!--aqui teremos a navegação por bradcrump-->
+        <div class="row">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><span onclick="window.electronAPI.openPage('index.html')"
+                                style="cursor: pointer;">Home</button></li>
+                        <li class="breadcrumb-item active" aria-current="page">Empresa</li>
+                    </ol>
+                </nav>
             </div>
-
         </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card" style="width: 100%;">
+                    <div class="card-header">
+                        <button class="btn btn-primary" onclick="window.electronAPI.openPage('empresa.html')">
+                            Cadastrar Empresas
+                        </button>
 
+                    </div>
+                    <div class="card-body">
+                        <table id="tabela-empresa" class="table table-striped table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>razao_social</th>
+                                    <th>CNPJ</th>
+                                    <th>Telefone</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-</div>
-
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-
-<!-- Bootstrap -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- DataTables -->
-<script src="https://cdn.datatables.net/2.3.7/js/dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/2.3.7/js/dataTables.bootstrap5.min.js"></script>
-
-<!-- Responsive -->
-<script src="https://cdn.datatables.net/responsive/3.0.8/js/dataTables.responsive.min.js"></script>
-<script src="https://cdn.datatables.net/responsive/3.0.8/js/responsive.bootstrap5.js"></script>
-
-<script type="module" src="listaempresa.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/2.3.7/js/dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/2.3.7/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/3.0.8/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/3.0.8/js/responsive.bootstrap5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="listaempresa.js"></script>
 </body>
+
 </html>

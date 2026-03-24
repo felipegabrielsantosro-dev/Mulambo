@@ -1,5 +1,6 @@
+
 {
-    "name": "deskivo",
+    "name": "venom",
     "version": "1.0.0",
     "main": "app/renderer/main/index.js",
     "type": "module",
@@ -11,17 +12,22 @@
         "build:all": "electron-builder --win --linux"
     },
     "build": {
-        "appId": "com.deskivo.app",
-        "productName": "Deskivo",
-        "copyright": "Copyright © 2025 Deskivo",
+        "appId": "com.venom.app",
+        "productName": "Venom",
+        "copyright": "Venudo 2024",
         "directories": {
-            "output": "C:/deskivo"
+            "output": "C:\\projeto"
         },
         "files": [
             "app/**/*",
             "node_modules/**/*",
-            "package.json",
-            ".env"
+            "package.json"
+        ],
+        "extraFiles": [
+            {
+                "from": ".env",
+                "to": ".env"
+            }
         ],
         "win": {
             "target": [
@@ -31,15 +37,14 @@
                         "x64"
                     ]
                 }
-            ],
-            "icon": "app/assets/icon.ico"
+            ]
         },
         "nsis": {
             "oneClick": false,
             "allowToChangeInstallationDirectory": true,
             "createDesktopShortcut": true,
             "createStartMenuShortcut": true,
-            "shortcutName": "Deskivo"
+            "shortcutName": "Venudo"
         },
         "linux": {
             "target": [
@@ -67,10 +72,8 @@
         "electron-builder": "^25.1.8"
     },
     "dependencies": {
-        "datatables.net-dt": "^2.3.7",
         "dotenv": "^17.3.1",
         "drizzle-orm": "^0.45.1",
-        "knex": "^3.1.0",
         "pg": "^8.20.0",
         "postgres": "^3.4.8"
     }

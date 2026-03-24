@@ -1,24 +1,37 @@
-const voltarButton = document.getElementById('voltar-button');
-const cadastroButton = document.getElementById('cadastro-button');
-
-voltarButton.addEventListener('click', async () => {
-    try {
-        if (!window.electronAPI || typeof window.electronAPI.goHome !== 'function') {
-            throw new Error('API do Electron não foi injetada pelo preload');
+const table = new DataTable('#tabela-empresa', {
+    responsive: true,
+    processing: true,
+    serverSide: true,
+    ajax: async (data, callback) => {
+        const filter = {
+            term: data?.search?.value,      //Termo da pesquisa
+            limit: data?.length,            //Limite de resgistos a ser selecionado do banco
+            offset: data?.start,            //A pesquinsa inicia no registro Ex: 5, 10
+            orderType: data?.order[0]?.dir, //Tipo de ordenação 
+            column: data?.order[0]?.column  //Coluna a ser filtrada
         }
-        await window.electronAPI.goHome();
-    } catch (error) {
-        console.error('Erro ao voltar para a tela inicial:', error);
-    }
-});
-
-cadastroButton.addEventListener('click', async () => {
-    try {
-        if (!window.electronAPI || typeof window.electronAPI.openPage !== 'function') {
-            throw new Error('API do Electron não foi injetada pelo preload');
+        try {
+            const response = await window.electronAPI.searchEmpresa(filter);
+            callback({
+                draw: response?.draw ?? data?.draw ?? 0,
+                recordsTotal: response?.recordsTotal ?? 0,
+                recordsFiltered: response?.recordsFiltered ?? 0,
+                data: response?.data ?? []
+            });
+        } catch (error) {
+            console.error(`Restrição: ${error.message}`);
+            callback({
+                draw: 0,
+                recordsTotal: 0,
+                recordsFiltered: 0,
+                data: []
+            });
         }
-        await window.electronAPI.openPage('empresa.html');
-    } catch (error) {
-        console.error('Erro ao abrir a tela de cadastro de empresa:', error);
-    }
+    },
+    columns: [
+        { data: 'id', title: 'Código' },
+        { data: 'razao_social', title: 'razao_social' },
+        { data: 'cnpj', title: 'CNPJ' },
+        { data: 'telefone', title: 'Telefone' }
+    ]
 });
